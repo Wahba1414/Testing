@@ -26,13 +26,11 @@ describe('Test Sum Function', function () {
     // some logic
 
   });
-
-
-  it('Sum Should be 10', function () {
+  it('Should sum to be 10', function () {
     expect(sum(1, 2, 3, 4)).to.be.a('number').and.equals(10);
   });
 
-  it('Return zero when there are no args', function () {
+  it('Should return zero when there are no args', function () {
     expect(sum()).equals(0);
   });
 

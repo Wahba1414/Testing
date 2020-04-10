@@ -31,12 +31,13 @@ describe('Sinon Spy', function () {
   });
 
   describe('Spy on a member function', function () {
-    var spy;
+    var spy, spy2;
     var sandbox;
 
     before(function () {
       sandbox = sinon.createSandbox();
       spy = sandbox.spy(robots.robot, 'prepareCoffee');
+      spy2 = sandbox.spy(robots.robot, 'prepareLaunch');
     });
 
     after(function () {
@@ -49,10 +50,10 @@ describe('Sinon Spy', function () {
       expect(spy.called).to.be.true;
     });
 
-    it('Should return 3', function () {
-      robots.member_wrapper(robots.robot, 'prepareCoffee');
+    it('Should return 4', function () {
+      robots.member_wrapper(robots.robot, 'prepareLaunch');
 
-      expect(spy.returnValues[0]).to.equal(3);
+      expect(spy2.returnValues[0]).to.equal(4);
     });
 
   })

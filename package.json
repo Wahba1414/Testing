@@ -20,7 +20,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "mocha || true"
+    "test": "mocha || true",
+    "istanbul": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
   },
   "author": "",
   "license": "ISC"
