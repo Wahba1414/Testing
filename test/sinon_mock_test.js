@@ -6,8 +6,20 @@ var robots = require('../server/sinon_robots');
 
 
 describe('Mock on Object', function () {
+  var sandbox;
+  var mock;
+
+  before(function () {
+    sandbox = sinon.createSandbox();
+    mock = sandbox.mock(robots.robot);
+  });
+
+
+  after(function () {
+    sandbox.restore();
+  })
+
   it('Should be called once', function () {
-    var mock = sinon.mock(robots.robot);
 
     mock.expects('prepareCoffee').called.once;
 

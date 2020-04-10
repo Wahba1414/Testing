@@ -32,9 +32,16 @@ describe('Sinon Spy', function () {
 
   describe('Spy on a member function', function () {
     var spy;
+    var sandbox;
+
     before(function () {
-      spy = sinon.spy(robots.robot, 'prepareCoffee');
+      sandbox = sinon.createSandbox();
+      spy = sandbox.spy(robots.robot, 'prepareCoffee');
     });
+
+    after(function () {
+      sandbox.restore();
+    })
 
     it('Should be called once', function () {
       robots.member_wrapper(robots.robot, 'prepareCoffee');

@@ -2,14 +2,21 @@ var chai = require('chai'),
   expect = chai.expect,
   sinon = require('sinon');
 
-
 var robots = require('../server/sinon_robots');
 
 describe('Stub on Object', function () {
   var stub;
+  var sandbox;
+
   before(function () {
-    stub = sinon.stub(robots.robot);
+    sandbox = sinon.createSandbox();
+    stub = sandbox.stub(robots.robot);
+  });
+
+  after(function () {
+    sandbox.restore();
   })
+
 
   it('Shoud be called once', function () {
     // This won't call the original function.
@@ -29,6 +36,5 @@ describe('Stub on Object', function () {
 
     expect(stub.prepareLaunch.returnValues[stub.prepareLaunch.returnValues.length - 1]).to.equal(55);
   })
-
 
 })

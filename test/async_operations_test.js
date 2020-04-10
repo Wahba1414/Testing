@@ -8,7 +8,7 @@ var expect = chai.expect;
 // require async_operations.
 const async = require('../server/async_operations');
 
-describe('Test asynchronous operations', function () {
+xdescribe('Test asynchronous operations', function () {
 
   it('Try it with Async & Await + Correct output', async function () {
     var output = await async.waitForOneSecond();
