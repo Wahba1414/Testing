@@ -23,7 +23,6 @@ describe('Stub on Object', function () {
     robots.member_wrapper(stub, 'prepareLaunch');
 
     expect(stub.prepareLaunch.called).to.be.true;
-
   });
 
   it('Shoud return 55', function () {
