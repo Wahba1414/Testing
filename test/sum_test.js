@@ -5,6 +5,8 @@ chai.use(chaiHttp);
 
 var expect = chai.expect;
 
+//chai.should(); // This statement adds a should function to all JS objects which include all objects, functions, etc.
+
 // require Sum Module.
 const sum = require('../server/sum');
 
@@ -12,14 +14,14 @@ describe('Test Sum Function', function () {
 
   // Before hook.
   before(function () {
-    console.log(`Inside after hook`);
+    // console.log(`Inside before hook`);
 
     // some logic
 
   });
 
   after(function () {
-    console.log(`Inside after hook`);
+    // console.log(`Inside after hook`);
 
     // some logic
 

@@ -17,6 +17,7 @@ describe('Test asynchronous operations', function () {
 
 
   it('Try it with Promises + Correct output', function () {
+
     return async.waitForOneSecond().then(function (output) {
       expect(output).to.equal('Done');
     })

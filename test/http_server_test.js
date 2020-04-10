@@ -6,7 +6,7 @@ chai.use(chaiHttp);
 var expect = chai.expect;
 
 
-describe('Test HTTP requests', function () {
+xdescribe('Test HTTP requests', function () { //'x' prefix is equivalent to .skip
 
   it('Get Hello World response', function (done) { //use call back pattern this time. by this, Mocha knows this 'it' is async.
 
